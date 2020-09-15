@@ -3,9 +3,6 @@ from pages.login_page import LoginPage
 
 link = "http://selenium1py.pythonanywhere.com/"
 link_to_login = 'http://selenium1py.pythonanywhere.com/accounts/login/'
-def go_to_login_page(browser):
-    login_link = browser.find_element_by_css_selector("#login_link")
-    login_link.click()
 
 # тестирование наличия ссылки на страницу авторизации
 def test_guest_should_see_login_link(browser):

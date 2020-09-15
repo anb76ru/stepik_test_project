@@ -7,6 +7,11 @@ class LoginPageLocators():
     LOGIN_FORM = (By.ID, 'login_form')
     REGISTER_FORM = (By.ID, 'register_form')
 
+class ProductPageLocators():
+    ADD_TO_BASKET = (By.CSS_SELECTOR, '.btn-add-to-basket')
+    ADDED_TO_BASKET_MESSAGE = (By.CSS_SELECTOR, '#messages > div > div')
+    BUTTON_ADD_TO_BASKET = (By.CSS_SELECTOR, '.btn-add-to-basket')
+
     '''login_username = (By.NAME,  'login-username')
     login_password = (By.NAME, 'login-password')
     login_submit = (By.NAME, 'login_submit')
