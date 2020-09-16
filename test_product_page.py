@@ -4,7 +4,7 @@ from pages.product_page import ProductPage
 from pages.main_page import MainPage
 
 
-product_link = 'http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear'
+product_link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=newYear2019' #'http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear'
 
 # run test: pytest -v -s --tb=line --language=en test_product_page.py
 
