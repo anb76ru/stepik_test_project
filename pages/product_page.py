@@ -25,7 +25,7 @@ class ProductPage(BasePage):
         product_name_added = self.browser.find_element(*ProductPageLocators.PRODUCT_NAME_ADDED) #_by_xpath('//*[@id="messages"]/div[1]/div/strong')
         product_name_added_text = product_name_added.text
 
-        assert product_name_text == product_name_added_text, "added product differ product name on page"
+        assert product_name_text == product_name_added_text, "added product name differ by product name on page"
     
     def compare_product_price(self):
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE) #_by_css_selector('.col-sm-6 .price_color')
