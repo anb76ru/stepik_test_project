@@ -4,7 +4,7 @@ from pages.product_page import ProductPage
 from pages.main_page import MainPage
 import pytest
 
-product_link = 'http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear'
+product_link = 'http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear2019'
 
 # run test: pytest -v -s --tb=line --language=en test_product_page.py
 
@@ -33,7 +33,7 @@ def test_add_to_cart_product(browser):
 
 
 # добавление товара в корзину с параметризацией
-product_link = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer'
+product_links = 'http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer'
 @pytest.mark.parametrize('link', [f"{product_link}0",
                                   f"{product_link}1",
                                   f"{product_link}2",
@@ -53,3 +53,32 @@ def test_guest_can_add_product_to_basket(browser, link):
     product_page.shoul_be_add_to_basket_message()
     product_page.compare_product_name()
     product_page.compare_product_price()
+
+# Открываем страницу товара 
+# Добавляем товар в корзину 
+# Проверяем, что нет сообщения об успехе с помощью is_not_element_present
+@pytest.mark.xfail
+def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
+    product_page = ProductPage(browser, product_link)
+    product_page.open()
+    product_page.add_to_cart()
+    product_page.solve_quiz_and_get_code()
+    product_page.should_not_be_success_message()
+
+# Открываем страницу товара 
+# Проверяем, что нет сообщения об успехе с помощью is_not_element_present
+def test_guest_cant_see_success_message(browser): 
+    product_page = ProductPage(browser, product_link)
+    product_page.open()
+    product_page.should_not_be_success_message()
+
+# Открываем страницу товара
+# Добавляем товар в корзину
+# Проверяем, что нет сообщения об успехе с помощью is_disappeared
+@pytest.mark.xfail
+def test_message_disappeared_after_adding_product_to_basket(browser):
+    product_page = ProductPage(browser, product_link)
+    product_page.open()
+    product_page.add_to_cart()
+    product_page.solve_quiz_and_get_code()
+    product_page.should_wait_until_element_is_not_present()

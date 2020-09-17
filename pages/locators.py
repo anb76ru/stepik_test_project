@@ -17,12 +17,3 @@ class ProductPageLocators():
 
     PRODUCT_PRICE = (By.CSS_SELECTOR, '.col-sm-6 .price_color')
     PRODUCT_PRICE_ADDED = (By.XPATH, '//*[@id="messages"]/div[3]/div/p[1]/strong')
-
-    '''login_username = (By.NAME,  'login-username')
-    login_password = (By.NAME, 'login-password')
-    login_submit = (By.NAME, 'login_submit')
-
-    reg_email = (By.NAME, 'registration-email')
-    reg_password = (By.NAME, 'registration-password1')
-    reg_password_repaet = (By.NAME, 'registration-password2')
-    reg_submit = (By.NAME, 'registration_submit')'''
