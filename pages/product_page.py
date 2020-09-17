@@ -11,7 +11,7 @@ class ProductPage(BasePage):
     
     def should_be_product_page_url(self):
         assert "?promo=newYear" in self.browser.current_url, 'opened the wrong page'
-
+        
     def should_be_add_to_cart_link(self):
         assert self.is_element_present(*ProductPageLocators.ADD_TO_BASKET), "'add to basket' button is not presented"
 
