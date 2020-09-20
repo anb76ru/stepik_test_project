@@ -7,6 +7,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from pages.locators import BasePageLocators
+from pages.locators import BasketPageLocators
 
 class BasePage():
     def __init__(self, browser, url, timeout = 10):
@@ -31,6 +32,10 @@ class BasePage():
             return False
         return True
     
+    def go_to_basket_page(self):
+        basket_page = self.browser.find_element(*BasketPageLocators.BASKET_ITEMS)
+        basket_page.click()
+
     def is_not_element_present(self, how, what, timeout=4):
         try:
             WebDriverWait(self.browser, timeout).until(EC.presence_of_element_located((how, what)))

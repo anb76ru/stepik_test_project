@@ -22,3 +22,7 @@ class ProductPageLocators():
 
     PRODUCT_PRICE = (By.CSS_SELECTOR, '.col-sm-6 .price_color')
     PRODUCT_PRICE_ADDED = (By.XPATH, '//*[@id="messages"]/div[3]/div/p[1]/strong')
+
+class BasketPageLocators():
+    BASKET_ITEMS = (By.CSS_SELECTOR, '.btn-group >a')
+    TEXT_ABOUT_EMPTY_BASKET = (By.ID, 'content_inner')

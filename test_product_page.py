@@ -2,6 +2,7 @@ from pages.product_page import ProductPage
 from pages.login_page import LoginPage
 from pages.product_page import ProductPage
 from pages.main_page import MainPage
+from pages.basket_page import BasketPage
 import pytest
 
 product_link = 'http://selenium1py.pythonanywhere.com/catalogue/the-shellcoders-handbook_209/?promo=newYear2019'
@@ -97,3 +98,12 @@ def test_message_disappeared_after_adding_product_to_basket(browser):
     product_page.add_to_cart()
     product_page.solve_quiz_and_get_code()
     product_page.should_wait_until_element_is_not_present()
+
+
+def test_guest_cant_see_product_in_basket_opened_from_product_page(browser):
+    product_page = BasketPage(browser, product_link)
+    product_page.open()
+    product_page.go_to_basket_page()
+    product_page.should_not_be_items()
+    product_page.should_be_text_about_empty_basket()
+    
