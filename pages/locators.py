@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
 
-
+# создадим классы для разных страниц
+# зададим для классов набор локаторов
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
     LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
